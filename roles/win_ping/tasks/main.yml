@@ -1,0 +1,13 @@
+
+---
+- debug:
+    var: hostvars
+    
+- include_tasks: "{{ task }}"
+  tags: "always"
+  loop:
+    - win_ping.yml
+
+
+  loop_control:
+    loop_var: task
