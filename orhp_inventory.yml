@@ -1,9 +1,10 @@
 all:
   hosts:
-  
+    
 
   children:
     linux_test:
       hosts:
-       10.17.20.150
+        CH-VM-LNX01:
+                ansible_host: 10.17.20.150
     window_test:       
