@@ -1,0 +1,23 @@
+- name: Create a IFS directory if it does not exist
+  ansible.builtin.file:
+    path: /{{ item }}
+    state: directory
+    mode: '0755'
+  loop:
+    - { /IFS }
+    - { /IFS/archive }
+    - { /IFS/transport }
+    - { /IFS/files }
+    - { /IFS/scripts }
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /files/{{ item }}
+    dest: /IFS/scripts/
+    owner: foo
+    group: foo
+    mode: '0644'
+  loop:
+    - { cnb_private.key }
+    - { orhp_cnb_sftp_batch_upload.bat }
+    - { orhp_sftp_cnb_upload_final.sh }

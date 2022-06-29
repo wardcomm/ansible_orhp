@@ -1,0 +1,4 @@
+lcd /IFS/transport
+
+put *
+
