@@ -1,3 +1,4 @@
+---
 test_server:
-  ch-vm-lnx01:  
-    ansible_hosts= 10.17.20.150
+  ch-vm-lnx01:
+    ansible_hosts: 10.17.20.150
