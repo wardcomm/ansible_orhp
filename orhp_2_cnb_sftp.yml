@@ -1,6 +1,6 @@
 ---
 - hosts: all
   gather_facts: true
-  connection: local
+  # connection: local
   roles:
     - orhp_2_cnb_sftp
