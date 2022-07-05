@@ -23,6 +23,7 @@ smb_command=('get $today_file; exit')
 smb_user="svc_cnb_sftp@corp.orhp.com"
 file_name="_Lookup7500.csv"
 
+today_date=(`date +%m%d%y`)
 today_file_location=(/IFS/transport/$today_date"_Lookup7500.csv")
 today_file=($today_date"_Lookup7500.csv")
 today_archive=(/IFS/archive/$today_date"_Lookup7500.csv")
@@ -39,6 +40,8 @@ clear
 #echo debug area
 echo "                             "
 echo "============================="
+echo "Email date $email_date       "
+echo "Today_date $today_date       "
 echo "Today_file $today_file"
 echo "Today_file location $today_file_location"
 echo "Today_archive $today_archive"
@@ -56,6 +59,7 @@ $make_transport
 $make_archive
 cd /IFS/transport
 smbclient $location -c "get $today_file; exit" -U $smb_user -m SMB3 -D $directory
+#smbclient "//corp.orhp.com/Applications/Environments" -c "get $today_file; exit" -U svc_cnb_sftp@corp.orhp.com -m SMB3 -D "/Production/Lockbox/Transport"
 
 if [[ -e "$today_archive_location" ]]; then
 echo "file exists"
