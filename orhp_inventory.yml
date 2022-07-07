@@ -1,6 +1,11 @@
 ---
 all:
   hosts:
-    ch-vm-lnx01: 
+    ch-vm-lnx01:
       ansible_hosts: 10.17.20.150
-
+    ch-vm-hst01:
+      ansible_hosts: 10.17.20.31
+    ch-vm-hst02:
+      ansible_hosts: 10.17.20.32
+    ch-l-JWLV1X2:
+      ansible_hosts: 10.17.9.96
