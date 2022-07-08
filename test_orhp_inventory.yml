@@ -3,4 +3,4 @@ all:
   hosts:
     ch-vm-lnx01.orhp.com:
       ansible_hosts: 10.17.20.150
-      inventory_hostname: ch-vm-lnx01.orhp.com
+      
