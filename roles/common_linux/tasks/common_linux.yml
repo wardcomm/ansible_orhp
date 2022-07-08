@@ -4,8 +4,8 @@
     state: directory
     mode: '0755'
   loop:
-    - { /IFS }
-    - { /IFS/archive }
-    - { /IFS/transport }
-    - { /IFS/files }
-    - { /IFS/scripts }
+    -  /IFS }
+    -  /IFS/archive
+    -  /IFS/transport
+    -  /IFS/files
+    -  /IFS/scripts
