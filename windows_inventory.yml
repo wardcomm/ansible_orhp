@@ -2,9 +2,8 @@
 all:
   hosts:
 
-
     ch-vm-hst02.orhp.com:
       ansible_hosts: 10.17.20.3
 
-    ch-l-JWLV1X2.orhp.com:
+    ch-l-jwlv1x2.orhp.com:
       ansible_hosts: 10.17.9.96
