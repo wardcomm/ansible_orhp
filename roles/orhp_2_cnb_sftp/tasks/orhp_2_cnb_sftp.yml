@@ -13,4 +13,4 @@
 - name: Run a CNB SFTP UPLOAD script
   ansible.builtin.script:
     cmd: /IFS/scripts/orhp_sftp_cnb_upload_final.sh
-    vremote_src: yes
+    remote_src: yes
