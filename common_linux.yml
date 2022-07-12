@@ -2,6 +2,6 @@
 - hosts: all
   become: yes
   gather_facts: true
-  connection: local
+  # connection: local
   roles:
     - common_linux
