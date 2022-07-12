@@ -12,7 +12,7 @@
 
 - name: Run a CNB SFTP UPLOAD script
   ansible.builtin.shell:
-    cmd: bash orhp_sftp_cnb_upload_final.sh
+    cmd: bash orhp_sftp_cnb_upload_final.sh < {{ password }}
     chdir: /IFS/scripts/
 
 
