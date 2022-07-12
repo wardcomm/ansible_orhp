@@ -1,7 +1,7 @@
 ---
 - hosts: all
-  vars_files:
-    - main.yml
+  # vars_files:
+  #   - main.yml
   gather_facts: true
   connection: local
   remote_user: Administrator

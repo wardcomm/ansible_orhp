@@ -1,3 +1,6 @@
+- include_vars: password.yml
+
+
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
     src: files/{{ item }}
