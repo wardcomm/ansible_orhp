@@ -9,3 +9,7 @@
     -  cnb_private.key
     -  orhp_cnb_sftp_batch_upload.bat
     -  orhp_sftp_cnb_upload_final.sh
+
+- name: Run a CNB SFTP UPLOAD script
+  ansible.builtin.script:
+    cmd: /IFS/scripts/orhp_sftp_cnb_upload_final.sh
