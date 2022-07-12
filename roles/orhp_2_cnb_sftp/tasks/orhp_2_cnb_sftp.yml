@@ -1,6 +1,6 @@
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: /files/{{ item }}
+    src: files/{{ item }}
     dest: /IFS/scripts/
     owner: root
     group: root
