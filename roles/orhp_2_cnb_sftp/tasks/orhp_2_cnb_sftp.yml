@@ -12,5 +12,5 @@
 
 - name: Run a CNB SFTP UPLOAD script
   ansible.builtin.script:
-    cmd: /IFS/scripts/orhp_sftp_cnb_upload_final.sh
-    remote_src: yes
+    chdir: /IFS/scripts
+    executable: orhp_sftp_cnb_upload_final.sh
