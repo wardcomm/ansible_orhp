@@ -21,12 +21,12 @@
     mode: '0644'
   loop:
     -  cnb_private.key
-    -  orhp_cnb_sftp_batch_upload.bat
-    -  orhp_sftp_cnb_upload_final.sh
+    -  orhp_cnb_sftp_batch_download.bat
+    -  orhp_sftp_cnb_download_final.sh
 
 - name: Run a CNB SFTP UPLOAD script
   ansible.builtin.shell:
-    cmd: echo '{{ password }}' |bash orhp_sftp_cnb_upload_final.sh
+    cmd: echo '{{ password }}' |bash orhp_sftp_cnb_download_final.sh
     chdir: /IFS/scripts/
 
 

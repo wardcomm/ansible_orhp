@@ -1,0 +1,3 @@
+lcd /IFS/extracts
+get *
+

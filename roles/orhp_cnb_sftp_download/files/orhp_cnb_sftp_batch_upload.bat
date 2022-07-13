@@ -1,4 +1,0 @@
-lcd /IFS/transport
-
-put *
-

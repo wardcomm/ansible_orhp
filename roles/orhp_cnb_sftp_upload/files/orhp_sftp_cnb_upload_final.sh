@@ -2,10 +2,9 @@
 
 #variables
 email="joseph.ward@orhp.com"
-#cc1="kyla@orhp.com"
-#cc2="chamun@orhp.com"
+cc1="kyla@orhp.com"
+cc2="chamun@orhp.com"
 reply_email="joseph.ward@orhp.com"
-passhrase="pAvem5entbulgi1nessPoi'ntersma8sherstop;perla6unChpend-inggu[mminesSscarcecu>ddlygru?mbLecas\ually"
 source_loc="Applications"
 source_dir="/Environments/Production/Lockbox/Transport"
 today_date=(`date +%m%d%y`)
@@ -61,14 +60,16 @@ cd /IFS/transport
 smbclient $location -c "get $today_file; exit" -U $smb_user -m SMB3 -D $directory
 #smbclient "//corp.orhp.com/Applications/Environments" -c "get $today_file; exit" -U svc_cnb_sftp@corp.orhp.com -m SMB3 -D "/Production/Lockbox/Transport"
 
+# logic
 if [[ -e "$today_archive_location" ]]; then
 echo "file exists"
 else
 
+#FiLE Transfer section
 cd /IFS/transport
-# sftp -b /REPO/scripts/BATCH/orhp_cnb_sftp_batch_upload.bat  -i /REPO/cnb_private.key  oldrepub@mway.cnb.com:/oldrepub.tocnb
 sftp -b /IFS/scripts/orhp_cnb_sftp_batch_upload.bat  -i /IFS/scripts/cnb_private.key  oldrepub@mway.cnb.com:/oldrepub.tocnb
 cp $today_file_location  $today_archive_location
+
 ###EMAIL SECTION
 echo "SFTP TRANSFER TO CNB
 __________________________

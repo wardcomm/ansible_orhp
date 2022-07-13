@@ -9,6 +9,7 @@
     -  /IFS/transport
     -  /IFS/files
     -  /IFS/scripts
+    -  /IFS/extracts
 
 - name: What is my inventory_hostname
   debug: var={{inventory_hostname}}
