@@ -1,0 +1,11 @@
+---
+- hosts: all
+  no_log: True
+  # vars_files:
+  #   - main.yml
+  gather_facts: true
+  connection: local
+  remote_user: Administrator
+  roles:
+    - common_linux
+    - orhp_cnb_sftp_upload

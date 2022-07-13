@@ -1,0 +1,36 @@
+- include_vars: password.yml
+
+
+  vars:
+    password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37393462363339353061303766636538633262343965396365343562373736383263343334306233
+          6432636666333763646534306636623562336464653233350a316365663763323061383861623237
+          31646331646135626334323935396530663238646332323464613066396437393334663039386533
+          3535653061646466660a616433633061653036633864363964393530633263343664346166613361
+          63363264343739393334316566396262353138396435626439306132393361643965623939346539
+          3834326534393933653463613135386237623437323761343737
+
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: files/{{ item }}
+    dest: /IFS/scripts/
+    owner: root
+    group: root
+    mode: '0644'
+  loop:
+    -  cnb_private.key
+    -  orhp_cnb_sftp_batch_upload.bat
+    -  orhp_sftp_cnb_upload_final.sh
+
+- name: Run a CNB SFTP UPLOAD script
+  ansible.builtin.shell:
+    cmd: echo '{{ password }}' |bash orhp_sftp_cnb_upload_final.sh
+    chdir: /IFS/scripts/
+
+
+
+# - name: Run a CNB SFTP UPLOAD script
+#   ansible.builtin.command:
+#     cmd: bash /IFS/scripts/orhp_sftp_cnb_upload_final.sh
