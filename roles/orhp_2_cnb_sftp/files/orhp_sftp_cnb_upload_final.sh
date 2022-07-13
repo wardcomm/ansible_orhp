@@ -67,7 +67,7 @@ else
 
 cd /IFS/transport
 # sftp -b /REPO/scripts/BATCH/orhp_cnb_sftp_batch_upload.bat  -i /REPO/cnb_private.key  oldrepub@mway.cnb.com:/oldrepub.tocnb
-sftp -b /IFS/scripts/orhp_cnb_sftp_batch_upload.bat  -i/IFS/scripts/cnb_private.key  oldrepub@mway.cnb.com:/oldrepub.tocnb
+sftp -b /IFS/scripts/orhp_cnb_sftp_batch_upload.bat  -i /IFS/scripts/cnb_private.key  oldrepub@mway.cnb.com:/oldrepub.tocnb
 cp $today_file_location  $today_archive_location
 ###EMAIL SECTION
 echo "SFTP TRANSFER TO CNB
