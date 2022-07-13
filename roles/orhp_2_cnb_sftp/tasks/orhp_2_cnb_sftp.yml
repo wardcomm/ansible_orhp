@@ -1,5 +1,5 @@
 - include_vars: password.yml
-  no_log: true
+
 
   vars:
     password: !vault |
@@ -28,7 +28,7 @@
   ansible.builtin.shell:
     cmd: echo '{{ password }}' |bash orhp_sftp_cnb_upload_final.sh
     chdir: /IFS/scripts/
-    
+    no_log: True
 
 
 # - name: Run a CNB SFTP UPLOAD script
