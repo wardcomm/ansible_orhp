@@ -18,7 +18,7 @@
     dest: /IFS/scripts/
     owner: root
     group: root
-    mode: '0644'
+    mode: '0744'
   loop:
     -  cnb_private.key
     -  orhp_cnb_sftp_batch_upload.bat
