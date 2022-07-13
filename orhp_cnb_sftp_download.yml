@@ -8,4 +8,4 @@
   remote_user: Administrator
   roles:
     - common_linux
-    - orhp_2_cnb_sftp_upload
+    - orhp_cnb_sftp_download
