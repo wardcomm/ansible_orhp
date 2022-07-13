@@ -1,0 +1,18 @@
+- name: Create a IFS directory if it does not exist
+  ansible.builtin.file:
+    path: '{{ item }}'
+    state: directory
+    mode: '0755'
+  loop:
+    -  c:\IFS
+    -  c:\IFS\archive
+    -  c:\IFS\transport
+    -  c:\IFS\files
+    -  c:\IFS\scripts
+    -  c:\IFS\extracts
+
+- name: What is my inventory_hostname
+  debug: var={{inventory_hostname}}
+
+- name: What is my ansible_hostname
+  debug: var={{ansible_hostname}}

@@ -1,0 +1,13 @@
+
+---
+- debug:
+    var: hostvars
+
+- include_tasks: "{{ task }}"
+  tags: "always"
+  loop:
+    - common_windows.yml
+
+
+  loop_control:
+    loop_var: task
